@@ -772,6 +772,7 @@ nav.active .bar::after {
   margin-bottom: 150px;
   display: flex;
   justify-content: flex-end;
+  margin-top: 50px;
 }
 
 #content {
@@ -810,16 +811,8 @@ nav.active .bar::after {
   justify-content: flex-end;
 }
 
-.share__grid {
-  margin-top: -55px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
-.share__grid .explore__card {
+.image__wrapper .explore__card {
+  margin-top: 55px;
   padding: 35px;
   background-color: var(--white);
   border: 2px solid transparent;
@@ -834,11 +827,7 @@ nav.active .bar::after {
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.share__grid .explore__card:hover {
-  border: 1px solid rgba(228, 36, 86, 0.4);
-}
-
-.share__grid .explore__card img {
+.image__wrapper .explore__card img {
   margin: 20px auto;
   width: 125px;
   height: 120px;
@@ -847,13 +836,13 @@ nav.active .bar::after {
   border-radius: 50%;
 }
 
-.share__grid .explore__card h1 {
+.image__wrapper .explore__card h1 {
   font-size: 18px;
   font-weight: 100;
   color: var(--black);
 }
 
-.share__grid .explore__card .clock {
+.image__wrapper .explore__card .clock {
   font-size: 18px;
   font-weight: 100;
   color: var(--black);
@@ -861,13 +850,32 @@ nav.active .bar::after {
   margin-bottom: 30px;
 }
 
-.share__grid .explore__card p {
+.image__wrapper .explore__card p {
   margin-bottom: 1rem;
   color: var(--black);
   margin: 10px auto;
   font-size: 22px;
   font-weight: 700;
   margin-top: 80px;
+}
+
+.image__container {
+  overflow-x: hidden;
+}
+.image__wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(
+    (100% - (1.5rem * (var(--per-view) - 1))) / var(--per-view)
+  );
+  grid-gap: 2rem;
+  position: relative;
+  left: 0;
+  transition: 0.3s;
+  height: 650px;
+}
+.image__wrapper > * {
+  aspect-ratio: 4 / 3;
 }
 
 .galle {
@@ -892,35 +900,43 @@ nav.active .bar::after {
   margin-bottom: 50px;
 }
 
-.gallery .image {
+.gallery .image__list {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.image__container {
-  overflow-x: hidden;
+.gallery .image__list1 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
-.image__wrapper {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc(
-    (100% - (1.5rem * (var(--per-view) - 1))) / var(--per-view)
-  );
-  grid-gap: 1.5rem;
-  position: relative;
-  left: 0;
-  transition: 0.3s;
+
+.gallery .image__list2 {
+  display: flex;
+  gap: 20px;
 }
-.image__wrapper > * {
-  aspect-ratio: 4 / 3;
+
+.gallery img {
+  height: 300px;
+  border-top-right-radius: 48px;
+  border-bottom-left-radius: 48px;
 }
-.image__container img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  display: block;
-  border-radius: 0.5rem;
+
+.img1 {
+  width: 900px;
+}
+.img2 {
+  max-width: 400px;
+}
+.img3 {
+  width: 500px;
+}
+.img4 {
+  width: 500px;
+}
+.img5 {
+  width: 500px;
 }
 
 .footer__container {
@@ -930,7 +946,7 @@ nav.active .bar::after {
   background-position: center center;
   position: relative;
   padding: 100px;
-  margin-top: 200px;
+  margin-top: 300px;
 }
 
 .footer__blur {
@@ -1371,9 +1387,30 @@ nav.active .bar::after {
     margin-bottom: 30px;
   }
 
-  .image__container img {
+  .gallery .img1 {
+    width: 600px;
+  }
+
+  .gallery .image__list {
+    gap: 15px;
+  }
+
+  .gallery .image__list1 {
+    gap: 15px;
+  }
+
+  .gallery .image__list2 {
+    gap: 15px;
+  }
+
+  .gallery img {
+    height: 200px;
+    border-bottom-left-radius: 36px;
+    border-top-right-radius: 36px;
+  }
+
+  .image__container .explore__card {
     width: 100%;
-    height: 250px;
     object-fit: cover;
     display: block;
     border-radius: 0.5rem;
@@ -1395,6 +1432,7 @@ nav.active .bar::after {
 
   .footer__container {
     padding: 40px;
+    margin-top: 150px;
   }
 
   .footer__bot {
@@ -1680,7 +1718,7 @@ nav.active .bar::after {
 
   .share h2 {
     font-size: 12px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
 
   .share__grid {
@@ -1723,6 +1761,28 @@ nav.active .bar::after {
   .galle h2 {
     font-size: 12px;
     margin-bottom: 30px;
+  }
+
+  .gallery .image__list {
+    gap: 10px;
+  }
+
+  .gallery .image__list1 {
+    gap: 10px;
+  }
+
+  .gallery .image__list2 {
+    gap: 10px;
+  }
+
+  .gallery img {
+    height: 100px;
+    border-bottom-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  .gallery .img1 {
+    width: 300px;
   }
 
   .image__container img {
