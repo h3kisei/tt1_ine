@@ -97,6 +97,10 @@ nav {
   font-size: 14px;
 }
 
+.link a:hover {
+  text-decoration: none;
+}
+
 .link a::after {
   content: "";
   position: absolute;
