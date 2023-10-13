@@ -31,8 +31,8 @@ const gap = 16;
 
 const carousel = document.getElementById("carousel"),
   content = document.getElementById("content"),
-  next = document.getElementById("next"),
-  prev = document.getElementById("prev");
+  next = document.getElementById("next__share"),
+  prev = document.getElementById("prev__share");
 
 next.addEventListener("click", (e) => {
   carousel.scrollBy(width + gap, 0);
@@ -43,6 +43,8 @@ next.addEventListener("click", (e) => {
     next.style.display = "none";
   }
 });
+
+console.log(carousel.scrollWidth);
 prev.addEventListener("click", (e) => {
   carousel.scrollBy(-(width + gap), 0);
   if (carousel.scrollLeft - width - gap <= 0) {
@@ -79,3 +81,18 @@ function events() {
 }
 
 events();
+
+$(document).ready(function () {
+  $("[data-toggle=popover]").popover({
+    trigger: "click",
+    placement: "bottom",
+    html: true,
+    content: function () {
+      var anchorText = $(this).text();
+      $("#popover-content")
+        .find("input[id=txtContent]")
+        .attr("value", anchorText);
+      return $("#popover-content").html();
+    },
+  });
+});

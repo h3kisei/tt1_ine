@@ -7,7 +7,11 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link href="https://fonts.cdnfonts.com/css/nunito-sans" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
     <title>Hoang InE</title>
@@ -24,21 +28,24 @@
             </div>
           </div>
           <ul class="nav__links">
-            <li class="link"><a href="#" onclick="scrollToTop">GIỚI THIỆU</a></li>
-            <li class="link"><a target="#news-event">TIN TỨC - SỰ KIỆN</a></li>
+            <li class="link"><a href="#">GIỚI THIỆU</a></li>
+            <li class="link"><a >TIN TỨC - SỰ KIỆN</a></li>
             <li class="link"><a href="#">ĐÀO TẠO</a></li>
             <li class="link"><a href="#">NGHIÊN CỨU KHOA HỌC</a></li>
             <li class="link"><a href="#">HỢP TÁC</a></li>
             <li class="link"><a href="#">CHIA SẺ - TRẢI NGHIỆM</a></li>
             <li class="link"><a href="#">THƯ VIỆN ẢNH</a></li>
             <li>
-              <button class="btn">
-              <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><style>svg{fill:#ffffff}</style><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-            </button>
+            <div id="popover-content" class="hide">
+              <div class="form__group">
+                <input class="form__control" id="txtContent" type="text" />
+                <button type="button" class='btn__search'><svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
+              </div>
+            </div>
+            <button type="button" class='btn' data-html='true' data-toggle='popover'><svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
           </li>
           </ul>
           <div class="overlay"></div>
-
             <div class="menu">
               <div class="bar"></div>
             </div>
@@ -192,7 +199,10 @@
             l’Italia e l’ASEAN, l’Università di Hanoi (HANU) intende organizzare
           </p>
           <div class="bot__news">
-            <h1>21/10/2021</h1>
+            <div class="clock">
+              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>
+              <h1>21/10/2021</h1>
+            </div>
             <a href="#">Xem thêm</a>
           </div>
         </div>
@@ -213,7 +223,6 @@
         <h2>Góc chia sẻ về những trải nghiệm của CBGV, SV Khoa Tiếng Italia</h2>
       </div>
       <section class="explore__container">
-        
           <div id="wrapper">
       <div id="carousel">
         <div id="content">
@@ -251,11 +260,11 @@
             </h1>
           </div>
         </div>
-        <div class="arrow">
-        <button id="prev">
+        <div class="arrow__share">
+        <button id="prev__share">
           <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><style>svg{fill:#e42456}</style><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"/></svg>
           </button>
-          <button id="next">
+          <button id="next__share">
             <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><style>svg{fill:#e42456}</style><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"/></svg>
           </button>
         </div>
@@ -294,7 +303,7 @@
       <span class="bg__blur"></span>
       <span class="bg__blur footer__blur"></span>
       <div class="footer__top">
-        <div class="footer__logo"><img src="assets/logo.png" alt="logo" /></div>
+        <div class="footer__logo"><img src="assets/Logo.png" alt="logo" /></div>
         <div class="footer__logo_content">
           <h1>KHOA TIẾNG ITALIA</h1>
           <h2>Trường Đại học Hà Nội</h2>
@@ -334,3 +343,10 @@
     </footer>
   </body>
 </html>
+
+<script>
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+  })
+  </script>
