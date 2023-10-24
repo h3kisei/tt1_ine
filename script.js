@@ -4,7 +4,7 @@ const imageLength = imageItems.length;
 const perView = 3;
 let totalScroll = 0;
 const delay = 2000;
-
+console.log(imageLength);
 imageWrapper.style.setProperty("--per-view", perView);
 for (let i = 0; i < perView; i++) {
   imageWrapper.insertAdjacentHTML("beforeend", imageItems[i].outerHTML);

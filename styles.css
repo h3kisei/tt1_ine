@@ -10,7 +10,7 @@
   --white: #ffffff;
   --max-width: 90%;
   --black: #000000;
-  --theme: #e42456;
+  --theme: #32cd32;
 }
 
 img {
@@ -70,7 +70,7 @@ body {
   background-image: url("/assets/1.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: bottom;
   min-height: 550px;
 }
 
@@ -139,7 +139,7 @@ nav {
 }
 
 .btn {
-  background-color: rgba(174, 9, 94, 0.8);
+  background-color: #32cd32;
   border: none;
   color: white;
   padding: 6px;
@@ -433,6 +433,17 @@ nav.active .bar::after {
   color: var(--secondary-color-dark);
 }
 
+.slide {
+  position: absolute;
+}
+
+.slide-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
 .news__event .class__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -442,6 +453,7 @@ nav.active .bar::after {
 
 .class__content p {
   font-size: 18px;
+  position: relative;
 }
 
 .class__image {
@@ -1018,7 +1030,7 @@ nav.active .bar::after {
 .footer__col > a {
   display: block;
   margin-bottom: 1rem;
-  color: var(--text-light);
+  color: var(--white);
   transition: 0.3s;
   font-size: 16px;
 }
